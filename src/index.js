@@ -1,13 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
+import SearchScreen from './search_screen/SearchScreen'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
+
+//Need to find a way to place the searchbutton under the search bar, might need to look up some examples
+
 root.render(
   <React.StrictMode>
-    <App />
+    <SearchScreen/>
   </React.StrictMode>
 );
 

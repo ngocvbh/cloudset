@@ -1,0 +1,38 @@
+body {
+  background-color: #C2E2F8;
+  font-family: poppins, sans-serif;
+  }
+
+#search-screen{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 2vh;
+  height: 100vh;
+}
+
+input[type=text]{
+  font-family: poppins;
+  background-color: #F9F9F9;
+  padding: 1vw;
+  border: none;
+  outline: none;
+  border-radius: 30px;
+  text-align: center;
+  font-size: 3vw;
+}
+
+#search-bar{
+  position: relative;
+}
+
+#search-bar img{
+  position: absolute;
+  max-width: 3vw;
+  left: 2%;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+
