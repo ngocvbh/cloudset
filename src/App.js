@@ -1,5 +1,5 @@
 import './App.css';
-import HomePage from './components/home_page/Home_Page.js';
+import HomePage from './components/home_page/HomePage.js';
 import SearchScreen from './components/search_screen/SearchScreen.js'
 
 function App() {
