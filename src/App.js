@@ -1,10 +1,16 @@
 import './App.css';
-import HomePage from './components/home_page/Home_Page.js';
-import SearchScreen from './components/search_screen/SearchScreen.js'
+import {BrowserRouter, Routes, Route} from 'react-router-dom';
+import HomePage from './components/home_page/HomePage.js';
+import SearchScreen from './components/search_screen/SearchScreen.js';
 
 function App() {
   return (
-    <HomePage/>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<SearchScreen/>}/>
+        <Route path="/home_page" element={<HomePage/>}/>
+      </Routes>
+    </BrowserRouter>
   );
 }
 

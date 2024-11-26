@@ -1,10 +1,14 @@
-import './SearchButton.css'
 
+import './SearchButton.css';
+import {Outlet, Link} from "react-router-dom";
 
 function SearchButton(){
 
     return(
-        <button type="button">Search</button>
+        <div id="search">
+            <Link id="search-button" to="/home_page">Search</Link>
+            <Outlet />
+        </div>
     );
 
 }

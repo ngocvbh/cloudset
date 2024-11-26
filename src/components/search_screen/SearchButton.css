@@ -1,11 +1,17 @@
-button{
+#search-button{
     border:none;
     font-family:poppins;
     font-size: 2vw;
+    color:black;
+    text-decoration:none;
     background-color:#FFE45E;
     border-radius: 30px;
     padding-left: 1.5vw;
     padding-right: 1.5vw;
     text-align: center;
     left: 50%;
+}
+
+#search-button:hover{
+    background-color: #FFF2b3;
 }

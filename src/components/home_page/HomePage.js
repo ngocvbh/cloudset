@@ -1,49 +1,45 @@
-import React, { useState, useEffect } from "react";
-import "./home_page.css";
+import './HomePage.css'
+import Title from '../Title.js'
+import Recommendation from './Recommendation.js'
 
-const HomePage = () => {
-  const [weatherData, setWeatherData] = useState(null);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
+function WeatherSection(props) {
+    return(
+        <section id="weather-section">
+            <div class="location">
+                <h2>{props.location}</h2>
+                <p id="temperature">{props.temp}</p>
+                <p id="weather-condition">{props.condition}</p>
+            </div>
+            <div class="details">
+                <p>Day {props.day}</p>
+                <p>Night {props.night}</p>
+            </div>
+            <div id="weather-icon">
+                <span>☀️</span>
+            </div>
+        </section>
+    );
+}
 
-  const API_KEY = ""; //Replace with API key
-  const CITY = "Irvine";
-  const UNITS = "imperial"; //Fahrenheit
+// Default values while we add functionality
+// Wanted to make an icon prop, but the emoji wasn't working
+WeatherSection.defaultProps = {
+    location: "Irvine, CA",
+    temp: "65°",
+    condition: "Clear",
+    day: "70°",
+    night: "63°",
+}
 
-  useEffect(() => {
-    const fetchWeatherData = async () => {
-      try {
-        const response = await fetch(
-          `https://api.openweathermap.org/data/2.5/weather?q=${CITY}&units=${UNITS}&appid=${API_KEY}`
-        );
-        if (!response.ok) {
-          throw new Error("Failed to fetch weather data");
-        }
-        const data = await response.json();
-        setWeatherData(data);
-        setLoading(false);
-      } catch (err) {
-        setError(err.message);
-        setLoading(false);
-      }
-    };
+function Home_Page() {
+    return(
+        <div id="home-page">
+            <Title/>
+            <WeatherSection/>
+            <Recommendation/>
+        </div>
+    );
+}
 
-    fetchWeatherData();
-  }, []);
 
-  if (loading) {
-    return <div className="loading">Loading...</div>;
-  }
-
-  if (error) {
-    return <div className="error">Error: {error}</div>;
-  }
-
-  console.log(weatherData);
-  //weatherData.main has temp, temp_max, temp_min, feels like 
-  //weatherData.name = Irvine
-
-  
-};
-
-export default HomePage;
+export default Home_Page;
