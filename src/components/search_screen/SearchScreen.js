@@ -1,4 +1,5 @@
 import './SearchScreen.css'
+import Title from '../Title.js'
 import SearchIcon from './Search.png'
 import SearchButton from './SearchButton'
 
@@ -14,8 +15,9 @@ function SearchBar() {
 function SearchScreen() {
     return(
         <div id="search-screen">
-            <SearchBar />
-            <SearchButton />
+            <Title/>
+            <SearchBar/>
+            <SearchButton/>
         </div>
     );
 }

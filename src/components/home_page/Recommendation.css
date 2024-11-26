@@ -1,0 +1,32 @@
+#recommendations {
+    background: #f9f9f9;
+    border-radius: 10px;
+    padding: 15px;
+}
+
+#recommendations h3 {
+    background-color: #ffe45e;
+    padding: 5px 10px;
+    border-radius: 5px;
+    display: inline-block;
+    margin-bottom: 15px;
+}
+
+.clothing-group {
+    display: flex;
+    gap: 15px;
+}
+
+.clothing-item {
+    text-align: center;
+}
+
+.clothing-item img {
+    width: 50px;
+    height: 50px;
+}
+
+.clothing-item p {
+    margin-top: 5px;
+    font-size: 0.9rem;
+}
