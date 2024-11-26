@@ -1,25 +1,49 @@
 import './Recommendation.css'
-import ShortSleeve from '../clothing_images/short_sleeve.png'
-import Shorts from '../clothing_images/shorts.png'
+import clothingImages from '../importImages';
 
-// Ngoc would add her code for determining how clothes are selected in this file
-// Could use props/ternary logic, or might need to look into conditional displays
-function Recommendation() {
+const clothingRecommendation = (temp) => {
+    if (temp > 80) {
+        return [
+            {labels: "Short Sleeve Shirt", imgKey: "short_sleeve"},
+            {labels: "Shorts", imgKey: "shorts"},
+            {labels: "Short Skirt", imgKey: "short_skirt"},
+            {labels: "Sunglasses", imgKey: "sunglasses"},
+            {labels: "Cap", imgKey: "cap"}
+        ];
+    } else if (temp > 60) {
+        return [
+            {labels: "Long Sleeve Shirt", imgKey: "long_sleeve"},
+            {labels: "Jeans", imgKey: "jeans"},
+            {labels: "Long Skirt", imgKey: "long_skirt"},
+            {labels: "Jacket", imgKey: "jacket"},
+            {labels: "Wind Breaker", imgKey: "windbreaker"}
+        ]
+    } else {
+        return [
+            {labels: "Long Sleeve Shirt", imgKey: "long_sleeve"},
+            {labels: "Thick Jacket", imgKey: "thick_jacket"},
+            {labels: "Beanie", imgKey: "beanie"},
+            {labels: "Boots", imgKey: "boots"},
+            {labels: "Gloves", imgKey: "gloves"},
+        ]
+    }
+}
+
+const Recommendation = ({temp}) => {
+    const recommendations = clothingRecommendation(temp);
     return(
         <section id="recommendations">
             <h3>Clothing Recommendations</h3>
-            <div class="clothing-group">
-                <div class="clothing-item">
-                    <img src={ShortSleeve} alt="Shirt"/>
-                    <p>Shirt</p>
-                </div>
-                <div class="clothing-item">
-                    <img src={Shorts} alt="Shorts"/>
-                    <p>Shorts</p>
-                </div>
+            <div className="clothing-group">
+                {recommendations.map((item, index) => (
+                    <div className="clothing-item" key={index}>
+                        <img src={clothingImages[item.imgKey]} alt={item.label} />
+                        <p>{item.label}</p>
+                    </div>
+                ))}
             </div>
         </section>
-    );
+    )
 }
 
 export default Recommendation;
