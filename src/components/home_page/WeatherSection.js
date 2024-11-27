@@ -54,15 +54,16 @@ const WeatherSection = (city) => {
 
     return(
         <section id="weather-section">
-          <div id="location">
-            <h2>{name}</h2>
-            <p id="temperature">{Math.round(temp)}°</p>
-            <p id="weather-condition">{weatherCondition}</p>
-          </div>
-          <div id="details">
-            <p>High: {Math.round(temp_max)}°</p>
-            <p>Low: {Math.round(temp_min)}°</p>
-          </div>
+            <div id="location">
+                <h2>{name}</h2>
+                <p id="temperature">{Math.round(temp)}°</p>
+                <p id="weather-condition">{weatherCondition}</p>
+            </div>
+
+            <div id="details">
+                <p>High: {Math.round(temp_max)}°</p>
+                <p>Low: {Math.round(temp_min)}°</p>
+            </div>
         </section>
 
     );
