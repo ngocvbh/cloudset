@@ -33,5 +33,16 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
 
+## Project Flow
+
+Please use the following project flow, since we're still working on guardrails to make the experience better and the website more robust.
+By A5 we plan to have the website sufficiently robust that these instructions won't be necessary.
+
+1) Type in a city in the U.S. (just the city, i.e. Irvine)
+2) Press the search button
+
+If you don't type in a city and just press search, the API will default to Irvine
+
+
 
 
