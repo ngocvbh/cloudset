@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
 
-const WeatherSection = (city) => {
+const WeatherSection = (props) => {
     const [weatherData, setWeatherData] = useState(null);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
 
     const API_KEY = "b02d7e75fa43bb634077f033cf8d7de8";
-    const CITY = {city};
+    const CITY = props.city;
     const UNITS = "imperial"; // Fahrenheit
 
     console.log(CITY);

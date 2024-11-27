@@ -7,7 +7,7 @@ function SearchBar(props){
 
     // Changes the location based on what the user types
     const changeLocation = (evnt) =>{
-        const newCity = evnt.target.value;
+        const newCity = evnt.target.value.trim();
         props.setCity(newCity);
     }
 

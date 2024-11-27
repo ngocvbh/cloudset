@@ -6,7 +6,7 @@ import SearchScreen from './components/search_screen/SearchScreen.js';
 
 function App() {
 
-  const [city, setCity] = useState("");
+  const [city, setCity] = useState("Irvine");
 
   // Function to update the location
   const setLocation = (newCity) =>{
@@ -17,7 +17,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<SearchScreen setCity={setLocation}/>}/>
-        <Route path="/home_page" element={<HomePage city={city}/>}/>
+        <Route path="/home_page" element={<HomePage city={city.toString()}/>}/>
       </Routes>
     </BrowserRouter>
   );
