@@ -12,27 +12,6 @@ body {
   height: 100vh;
 }
 
-input[type=text]{
-  font-family: poppins;
-  background-color: #F9F9F9;
-  padding: 1vw;
-  border: none;
-  outline: none;
-  border-radius: 30px;
-  text-align: center;
-  font-size: 3vw;
-}
 
-#search-bar{
-  position: relative;
-}
-
-#search-bar img{
-  position: absolute;
-  max-width: 3vw;
-  left: 2%;
-  top: 50%;
-  transform: translateY(-50%);
-}
 
 

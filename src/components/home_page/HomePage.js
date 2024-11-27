@@ -3,11 +3,11 @@ import Title from '../Title.js'
 import Recommendation from './Recommendation.js'
 import WeatherSection from './WeatherSection.js';
 
-function HomePage() {
+function HomePage(city) {
     return(
         <div id="home-page">
             <Title/>
-            <WeatherSection/>
+            <WeatherSection city={city}/>
             <Recommendation/>
         </div>
     );

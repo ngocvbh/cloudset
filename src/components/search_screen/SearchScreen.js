@@ -1,22 +1,15 @@
-import './SearchScreen.css'
-import Title from '../Title.js'
-import SearchIcon from './Search.png'
-import SearchButton from './SearchButton'
+import './SearchScreen.css';
+import {useState} from 'react';
+import Title from '../Title.js';
+import SearchButton from './SearchButton.js'
+import SearchBar from './SearchBar.js';
 
-function SearchBar() {
-    return (
-        <div id="search-bar">
-            <img src={SearchIcon} alt="search icon"/>
-            <input type="text" id="search-query" placeholder="Enter a zip code or city"/>
-        </div>
-    );
-}
 
-function SearchScreen() {
+function SearchScreen(props) {
     return(
         <div id="search-screen">
             <Title/>
-            <SearchBar/>
+            <SearchBar setCity={props.setCity}/>
             <SearchButton/>
         </div>
     );
