@@ -21,6 +21,7 @@ Locate the local repository and install dependencies
 
 ### `npm install`
 ### `npm install react-router-dom`
+### `npm install @geoapify/geocoder-autocomplete @geoapify/react-geocoder-autocomplete`
 
 ## Running the Application
 In the project directory, you can run:
