@@ -10,10 +10,17 @@ function SearchBar(props){
     const navigate = useNavigate();
 
     // Changes the location based on what the user types
-    const changeLocation = (evnt) =>{
-        const newCity = evnt.target.value.trim();
-        props.setCity(newCity);
-    }
+    const changeLocation = (evnt) => {
+        const input = evnt.target.value.trim();
+        const isZipCode = /^[0-9]{5}(?:-[0-9]{4})?$/.test(input); // Check if input matches ZIP code format
+        if (isZipCode) {
+            props.setSearchType('zip'); 
+        } else {
+            props.setSearchType('city');
+        }
+        props.setCity(input);
+    };
+    
 
     // When the user hits enter, they go to the next page as well
     const goHome = (evnt) =>{
