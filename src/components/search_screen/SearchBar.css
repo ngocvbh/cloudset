@@ -23,6 +23,7 @@
     left: 2%;
     top: 50%;
     transform: translateY(-50%);
+    z-index: 1;
   }
 
   /*border: 1px solid rgba(0, 0, 0, 0.3);*/
@@ -33,22 +34,20 @@
     width: calc(100% - 40px);
     font-family: poppins;
     background-color: #F9F9F9;
-
+    padding: 1vw;
     outline: none;
     border: none;
     border-radius: 30px;
-    line-height: 36px;
-    height: 36px;
-    
-
-    font-size: 14px;
+    text-align: center;
+    font-size: 2vw;
+    z-index: 0;
 }
 
 .geoapify-autocomplete-items {
     position: absolute;
     border: 1px solid rgba(0, 0, 0, 0.3);
     border-top: none;
-    background-color: #fff;
+    background-color: #F9F9F9;
     
     z-index: 99;
     top: 100%;

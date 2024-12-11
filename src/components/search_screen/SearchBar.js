@@ -8,6 +8,10 @@ import { GeoapifyGeocoderAutocomplete, GeoapifyContext } from '@geoapify/react-g
 function SearchBar(props){
 
     const API_KEY = "e935fa91c96e45109782a8fd2ce7e353";
+
+    function isEmpty(val){
+        return Object.keys(val).length === 0;
+    }
     
     // Callback function updates the city, state_code, and country_code for the user
     // Other properties you can add here are postcode (for zipcode), state, and country
@@ -19,7 +23,8 @@ function SearchBar(props){
         props.setLocation((location) => ({
             ...location,
             ...updatedValue,
-        }));
+            })
+        );
     });
 
     // Can add more filters to the context here as well
@@ -32,6 +37,7 @@ function SearchBar(props){
                 limit={3}
                 value={""}
                 placeSelect={onPlaceSelect}
+                skipIcons={true}
                 />
             </GeoapifyContext>
         </div>
