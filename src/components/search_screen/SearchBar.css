@@ -94,9 +94,8 @@
 
 .geoapify-close-button {
     position: absolute;
-    right: 0px;
+    right: -125px;
     top: 0;
-    margin-right: -200px;
 
     height: 100%;
     display: none;
