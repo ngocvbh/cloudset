@@ -3,8 +3,12 @@
 import './SearchBar.css';
 import SearchIcon from './Search.png';
 import {useNavigate} from 'react-router-dom';
+import { GeoapifyGeocoderAutocomplete, GeoapifyContext } from '@geoapify/react-geocoder-autocomplete'
 
 function SearchBar(props){
+
+    const API_KEY = "e935fa91c96e45109782a8fd2ce7e353";
+
 
     // useNavigate lets you navigate w/out the user interaction
     const navigate = useNavigate();
@@ -25,11 +29,28 @@ function SearchBar(props){
     }
 
     return (
+        /*
         <div id="search-bar">
             <img src={SearchIcon} alt="search icon"/>
             <input type="text" id="search-query" placeholder="Enter a zip code or city"
                    onChange={changeLocation} onKeyDown={goHome}/>
-        </div>   
+        </div> 
+        */
+
+        <div id="search-bar2">
+            <img src={SearchIcon} alt="search icon"/>
+            <GeoapifyContext apiKey={API_KEY}>
+                <GeoapifyGeocoderAutocomplete 
+                placeholder="Enter address here"
+                position={position}
+                countryCodes={countryCodes}
+                limit={3}
+                value={""}
+                /*placeSelect={onPlaceSelect}
+                suggestionsChange={onSuggectionChange} => Need to figure out how to add these functions*/
+                />
+            </GeoapifyContext>
+        </div>
     );
 }
 

@@ -9,8 +9,6 @@ const WeatherSection = (props) => {
     const CITY = props.city;
     const UNITS = "imperial"; // Fahrenheit
 
-    console.log(CITY);
-
     // FOR ZIP CODE 
     // const ZIP_CODE = "92618"; 
     // const COUNTRY_CODE = "us";
