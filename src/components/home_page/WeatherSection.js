@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 
+//Weather information section for the searched location
 const WeatherSection = (props) => {
     const [weatherData, setWeatherData] = useState(null);
     const [loading, setLoading] = useState(true);
@@ -21,6 +22,7 @@ const WeatherSection = (props) => {
         const fetchWeatherData = async () => {
             try {            
                 let url;
+                //two separate api calls since there are countries that don't use state
                 if (COUNTRY !== "usa") {
                     url = `https://api.openweathermap.org/data/2.5/weather?q=${CITY},${COUNTRY}us&units=${UNITS}&appid=${API_KEY}`; 
                 }

@@ -20,7 +20,7 @@
   #search-bar img{
     position: absolute;
     max-width: 3vw;
-    left: 2%;
+    left: -45%;
     top: 50%;
     transform: translateY(-50%);
     z-index: 1;
@@ -94,9 +94,8 @@
 
 .geoapify-close-button {
     position: absolute;
-    right: 0px;
+    right: -125px;
     top: 0;
-    margin-right: -200px;
 
     height: 100%;
     display: none;
