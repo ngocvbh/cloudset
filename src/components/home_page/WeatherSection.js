@@ -47,8 +47,9 @@ const WeatherSection = (props) => {
             }
         };
     
+        console.log("Fetched Weather")
         fetchWeatherData();
-    }, [props.city, props.searchType]);
+    }, [CITY, STATE, COUNTRY]);
 
     if (loading) {
         return <div className="loading">Loading...</div>;
