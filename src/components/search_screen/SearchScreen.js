@@ -1,16 +1,15 @@
 import './SearchScreen.css';
-import {useState} from 'react';
 import Title from '../Title.js';
 import SearchButton from './SearchButton.js'
 import SearchBar from './SearchBar.js';
 
 
-function SearchScreen(props) {
+function SearchScreen() {
 
     return (
         <div id="search-screen">
             <Title />
-            <SearchBar setLocation={props.setLocation} />
+            <SearchBar />
             <SearchButton />
         </div>
     );

@@ -5,18 +5,21 @@ const WeatherSection = (props) => {
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
 
-    console.log(props.location);
+    //Gets data from local storage
+    const saved = JSON.parse(localStorage.getItem('location'));
+    const [CITY, setCity] = useState(saved.city);
+    const [STATE, setState] = useState(saved.state);
+    const [COUNTRY, setCountry] = useState(saved.country);
 
     const API_KEY = "b02d7e75fa43bb634077f033cf8d7de8";
-    const CITY = props.location.city;
-    const STATE = props.location.state;
-    const COUNTRY = props.location.country;
     const UNITS = "imperial"; // Fahrenheit
 
+
     useEffect(() => {
+        
+
         const fetchWeatherData = async () => {
-            try {
-                
+            try {            
                 let url;
                 if (COUNTRY !== "usa") {
                     url = `https://api.openweathermap.org/data/2.5/weather?q=${CITY},${COUNTRY}us&units=${UNITS}&appid=${API_KEY}`; 
