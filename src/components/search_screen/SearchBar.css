@@ -1,6 +1,6 @@
   /*This heavily borrows from the style sheet from GeoAPIfy */
 
-  
+  /*
   input[type=text]{
     font-family: poppins;
     background-color: #F9F9F9;
@@ -11,6 +11,7 @@
     text-align: center;
     font-size: 3vw;
   }
+    */
 
   #search-bar{
     position: relative;
@@ -23,16 +24,22 @@
     top: 50%;
     transform: translateY(-50%);
   }
-/*
+
+  /*border: 1px solid rgba(0, 0, 0, 0.3);*/
+
+
   .geoapify-autocomplete-input {
     padding: 0 31px 0 7px;
     width: calc(100% - 40px);
+    font-family: poppins;
+    background-color: #F9F9F9;
 
     outline: none;
-
+    border: none;
+    border-radius: 30px;
     line-height: 36px;
     height: 36px;
-    border: 1px solid rgba(0, 0, 0, 0.3);
+    
 
     font-size: 14px;
 }
@@ -113,4 +120,4 @@
     font-size: small;
     color: rgba(0, 0, 0, 0.6);
 }
-*/
+

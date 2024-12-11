@@ -6,18 +6,18 @@ import SearchScreen from './components/search_screen/SearchScreen.js';
 
 function App() {
 
-  const [city, setCity] = useState("Irvine");
-
-  // Function to update the location
-  const setLocation = (newCity) =>{
-    setCity(newCity);
-  }
+  // Holds the location
+  /* setPlace(place => ({
+              ...place,
+              ...updatedValue}))
+     updatedValue = {"city":__, "state":__, "country":__}*/
+  const [place, setPlace] = useState({});
 
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<SearchScreen setCity={setLocation}/>}/>
-        <Route path="/home_page" element={<HomePage city={city.toString()}/>}/>
+        <Route path="/" element={<SearchScreen setLocation={setPlace}/>}/>
+        <Route path="/home_page" element={<HomePage location={place}/>}/>
       </Routes>
     </BrowserRouter>
   );

@@ -11,7 +11,7 @@ function HomePage(props) {
         <div id="home-page">
             <Title />
             <WeatherSection 
-                city={props.city} 
+                location={props.location} 
                 searchType={props.searchType} 
                 onWeatherData={(temperature) => setTemp(temperature)} 
             />

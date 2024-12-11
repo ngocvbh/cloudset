@@ -6,12 +6,11 @@ import SearchBar from './SearchBar.js';
 
 
 function SearchScreen(props) {
-    const [searchType, setSearchType] = useState('city'); // Default to 'city'
 
     return (
         <div id="search-screen">
             <Title />
-            <SearchBar setCity={props.setCity} setSearchType={setSearchType} />
+            <SearchBar setLocation={props.setLocation} />
             <SearchButton />
         </div>
     );

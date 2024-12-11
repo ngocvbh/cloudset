@@ -5,20 +5,25 @@ const WeatherSection = (props) => {
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
 
+    console.log(props.location);
+
     const API_KEY = "b02d7e75fa43bb634077f033cf8d7de8";
-    const CITY = props.city;
+    const CITY = props.location.city;
+    const STATE = props.location.state;
+    const COUNTRY = props.location.country;
     const UNITS = "imperial"; // Fahrenheit
 
     useEffect(() => {
         const fetchWeatherData = async () => {
             try {
+                
                 let url;
-                if (props.searchType === 'zip') {
-                    url = `https://api.openweathermap.org/data/2.5/weather?zip=${CITY},us&units=${UNITS}&appid=${API_KEY}`;
-                } else {
-                    url = `https://api.openweathermap.org/data/2.5/weather?q=${CITY}&units=${UNITS}&appid=${API_KEY}`;
+                if (COUNTRY != "usa") {
+                    url = `https://api.openweathermap.org/data/2.5/weather?q=${CITY},${COUNTRY}us&units=${UNITS}&appid=${API_KEY}`; 
                 }
-    
+                else {
+                    url = `https://api.openweathermap.org/data/2.5/weather?q=${CITY},${STATE},${COUNTRY}us&units=${UNITS}&appid=${API_KEY}`; 
+                }  
                 const response = await fetch(url);
                 if (!response.ok) {
                     throw new Error("Failed to fetch weather data");
