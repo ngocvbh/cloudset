@@ -9,34 +9,36 @@ const WeatherSection = (props) => {
     const CITY = props.city;
     const UNITS = "imperial"; // Fahrenheit
 
-    // FOR ZIP CODE 
-    // const ZIP_CODE = "92618"; 
-    // const COUNTRY_CODE = "us";
-
-    // const response = await fetch(
-    //     `https://api.openweathermap.org/data/2.5/weather?zip=${ZIP_CODE},${COUNTRY_CODE}&units=${UNITS}&appid=${API_KEY}`
-    // );
-
     useEffect(() => {
         const fetchWeatherData = async () => {
             try {
-                const response = await fetch(
-                    `https://api.openweathermap.org/data/2.5/weather?q=${CITY}&units=${UNITS}&appid=${API_KEY}`
-                );
+                let url;
+                if (props.searchType === 'zip') {
+                    url = `https://api.openweathermap.org/data/2.5/weather?zip=${CITY},us&units=${UNITS}&appid=${API_KEY}`;
+                } else {
+                    url = `https://api.openweathermap.org/data/2.5/weather?q=${CITY}&units=${UNITS}&appid=${API_KEY}`;
+                }
+    
+                const response = await fetch(url);
                 if (!response.ok) {
                     throw new Error("Failed to fetch weather data");
                 }
                 const data = await response.json();
                 setWeatherData(data);
                 setLoading(false);
+
+                // Pass the temperature to the parent component
+                if (props.onWeatherData) {
+                    props.onWeatherData(data.main.temp);
+                }
             } catch (err) {
                 setError(err.message);
                 setLoading(false);
             }
         };
-
+    
         fetchWeatherData();
-    }, []);
+    }, [props.city, props.searchType]);
 
     if (loading) {
         return <div className="loading">Loading...</div>;
@@ -50,7 +52,7 @@ const WeatherSection = (props) => {
     const { temp, temp_min, temp_max } = weatherData.main;
     const weatherCondition = weatherData.weather[0].description;
 
-    return(
+    return (
         <section id="weather-section">
             <div id="location">
                 <h2>{name}</h2>
@@ -63,8 +65,7 @@ const WeatherSection = (props) => {
                 <p>Low: {Math.round(temp_min)}°</p>
             </div>
         </section>
-
     );
-}
+};
 
 export default WeatherSection;

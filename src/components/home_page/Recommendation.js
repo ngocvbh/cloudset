@@ -38,7 +38,7 @@ const Recommendation = ({temp}) => {
                 {recommendations.map((item, index) => (
                     <div className="clothing-item" key={index}>
                         <img src={clothingImages[item.imgKey]} alt={item.label} />
-                        <p>{item.label}</p>
+                        <p>{item.labels}</p>
                     </div>
                 ))}
             </div>
