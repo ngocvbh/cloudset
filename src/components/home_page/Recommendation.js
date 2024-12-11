@@ -1,7 +1,7 @@
 import './Recommendation.css'
 import clothingImages from '../importImages';
 
-//Clothing Recommendation Section
+//Return the list of clothes based on the provided temperature
 const clothingRecommendation = (temp) => {
     if (temp > 80) {
         return [
@@ -30,6 +30,7 @@ const clothingRecommendation = (temp) => {
     }
 }
 
+//Clothing Recommendation Section
 const Recommendation = ({temp}) => {
     const recommendations = clothingRecommendation(temp);
     return(
