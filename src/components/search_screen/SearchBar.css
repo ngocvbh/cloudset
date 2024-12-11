@@ -35,14 +35,14 @@
 
   .geoapify-autocomplete-input {
     position: relative;
-    font-family: poppins;
+    font-family: "Poppins", sans-serif;
     background-color: #F9F9F9;
     padding: 1vw;
     outline: none;
     border: none;
     border-radius: 30px;
     text-align: center;
-    font-size: 2vw;
+    font-size: 1.75vw;
     width: 200%;
     right: 50%;
     z-index: 0;
@@ -94,8 +94,9 @@
 
 .geoapify-close-button {
     position: absolute;
-    right: 5px;
+    right: 0px;
     top: 0;
+    margin-right: -200px;
 
     height: 100%;
     display: none;
