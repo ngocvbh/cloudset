@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from "react";
 
+//Weather information section for the searched location
 const WeatherSection = (props) => {
     const [weatherData, setWeatherData] = useState(null);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
-
-    console.log(props.location);
 
     const API_KEY = "b02d7e75fa43bb634077f033cf8d7de8";
     const CITY = props.location.city;
@@ -18,6 +17,7 @@ const WeatherSection = (props) => {
             try {
                 
                 let url;
+                //two separate api calls since there are countries that don't use state
                 if (COUNTRY !== "usa") {
                     url = `https://api.openweathermap.org/data/2.5/weather?q=${CITY},${COUNTRY}us&units=${UNITS}&appid=${API_KEY}`; 
                 }

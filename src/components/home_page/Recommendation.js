@@ -1,6 +1,7 @@
 import './Recommendation.css'
 import clothingImages from '../importImages';
 
+//Clothing Recommendation Section
 const clothingRecommendation = (temp) => {
     if (temp > 80) {
         return [

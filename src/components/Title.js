@@ -1,5 +1,6 @@
 import './Title.css'
 
+//Website Logo
 function Title() {
     return (
         <div id="Title">

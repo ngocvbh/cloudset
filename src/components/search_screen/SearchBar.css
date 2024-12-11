@@ -20,7 +20,7 @@
   #search-bar img{
     position: absolute;
     max-width: 3vw;
-    left: 2%;
+    left: -45%;
     top: 50%;
     transform: translateY(-50%);
     z-index: 1;

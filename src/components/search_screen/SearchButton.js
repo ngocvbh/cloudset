@@ -1,13 +1,22 @@
-// Might need to change later for efficiency
-// https://stackoverflow.com/questions/42800815/how-to-use-onclick-event-on-react-link-component
-
 import './SearchButton.css'
-import {Outlet, Link} from "react-router-dom";
+import {Outlet, useNavigate} from "react-router-dom";
 
-function SearchButton() {
-    return(
+//Search Button
+function SearchButton({ location, setErrorMessage }) {
+    const navigate = useNavigate();
+
+    const handleSearchClick = () => {
+        if (!location || Object.keys(location).length === 0) {
+            setErrorMessage("Please select a valid location from the suggestion box before proceeding.");
+        } else {
+            setErrorMessage(""); // Clear any existing error messages
+            navigate("/home_page");
+        }
+    };
+
+    return (
         <div id="search">
-            <Link id="search-button" to="/home_page">Search</Link>
+            <button id="search-button" onClick={handleSearchClick}>Search</button>
             <Outlet />
         </div>
     );

@@ -16,7 +16,7 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<SearchScreen setLocation={setPlace}/>}/>
+        <Route path="/" element={<SearchScreen location={place} setLocation={setPlace}/>}/>
         <Route path="/home_page" element={<HomePage location={place}/>}/>
       </Routes>
     </BrowserRouter>

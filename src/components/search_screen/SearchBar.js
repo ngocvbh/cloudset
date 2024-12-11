@@ -5,6 +5,7 @@ import SearchIcon from './Search.png';
 import {useCallback} from "react";
 import { GeoapifyGeocoderAutocomplete, GeoapifyContext } from '@geoapify/react-geocoder-autocomplete'
 
+//Search Bar
 function SearchBar(props){
 
     const API_KEY = "e935fa91c96e45109782a8fd2ce7e353";
@@ -28,9 +29,9 @@ function SearchBar(props){
     });
 
     // Can add more filters to the context here as well
-    //<img src={SearchIcon} alt="search icon"/>
     return (     
-        <div id="search-bar">            
+        <div id="search-bar">  
+            <img src={SearchIcon} alt="search icon"/>          
             <GeoapifyContext apiKey={API_KEY}>
                 <GeoapifyGeocoderAutocomplete 
                 placeholder="Enter address here"
