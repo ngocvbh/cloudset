@@ -26,12 +26,15 @@
     z-index: 1;
   }
 
-  /*border: 1px solid rgba(0, 0, 0, 0.3);*/
+  /*border: 1px solid rgba(0, 0, 0, 0.3);
+   width: calc(100% - 40px)
+   
+   ;
+  */
 
 
   .geoapify-autocomplete-input {
-    padding: 0 31px 0 7px;
-    width: calc(100% - 40px);
+    position: relative;
     font-family: poppins;
     background-color: #F9F9F9;
     padding: 1vw;
@@ -40,6 +43,8 @@
     border-radius: 30px;
     text-align: center;
     font-size: 2vw;
+    width: 200%;
+    right: 50%;
     z-index: 0;
 }
 

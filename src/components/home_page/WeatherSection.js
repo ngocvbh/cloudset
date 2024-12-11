@@ -18,7 +18,7 @@ const WeatherSection = (props) => {
             try {
                 
                 let url;
-                if (COUNTRY != "usa") {
+                if (COUNTRY !== "usa") {
                     url = `https://api.openweathermap.org/data/2.5/weather?q=${CITY},${COUNTRY}us&units=${UNITS}&appid=${API_KEY}`; 
                 }
                 else {

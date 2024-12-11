@@ -28,9 +28,9 @@ function SearchBar(props){
     });
 
     // Can add more filters to the context here as well
-    return (       
-        <div id="search-bar">
-            <img src={SearchIcon} alt="search icon"/>
+    //<img src={SearchIcon} alt="search icon"/>
+    return (     
+        <div id="search-bar">            
             <GeoapifyContext apiKey={API_KEY}>
                 <GeoapifyGeocoderAutocomplete 
                 placeholder="Enter address here"
