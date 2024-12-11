@@ -59,3 +59,24 @@
 #weather-icon {
   font-size: 2.5rem;
 }
+
+/*Back to Search*/
+#back-to-search-button {
+  display: block;
+  margin: 50px auto;
+  padding: 20px 25px;
+  border:none;
+  font-family: "Poppins", sans-serif;
+  font-size: 1.25vw;
+  color:black;
+  text-decoration:none;
+  background-color:#FFE45E;
+  border-radius: 50px;
+  text-align: center;
+  left: 50%;
+  cursor: pointer;
+}
+
+#back-to-search-button:hover {
+  background-color: #FFF2b3;
+}
