@@ -5,7 +5,7 @@ import Recommendation from './Recommendation.js';
 import WeatherSection from './WeatherSection.js';
 import { useNavigate } from 'react-router-dom';
 
-function HomePage(props) {
+function HomePage() {
     const [temp, setTemp] = useState(null);
     const navigate = useNavigate();
 
@@ -13,8 +13,6 @@ function HomePage(props) {
         <div id="home-page">
             <Title />
             <WeatherSection 
-                location={props.location} 
-                searchType={props.searchType} 
                 onWeatherData={(temperature) => setTemp(temperature)} 
             />
             {temp !== null && <Recommendation temp={temp} />}
